@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zay Shop - Contact</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <!-- Load map styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+<!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+</head>
+
+<body style="background-color: #EFE7DA !important;">
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:3125886291">3125886291</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://www.facebook.com/profile.php?id=61582553013829&sfnsn=wa" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/arteluz_2307?igsh=MjA0emNpcm8wMnZs/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                Luz Artesanos
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link menu-hover" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-hover" href="about.html">Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-hover" href="shop.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-hover" href="contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        <span id="userName" style="font-weight:bold; margin-left:6px;"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Start Content Page -->
+    <div class="container-fluid bg-light py-5">
+        <div class="col-md-6 m-auto text-center">
+            <h1 class="h1">Contactanos a nosotros</h1>
+            <p>
+                Por aquí te puedes contactar directamente con la artesana, quien con mucho cariño y dedicación realiza cada uno de sus diseños a mano. Si tienes alguna idea especial o un diseño que te gustaría tener, no dudes en escribirle. Estará feliz de ayudarte a crear algo único y hecho con amor.
+            </p>
+        </div>
+    </div>
+
+    <!-- Start Map -->
+    <!-- Mapa de Google Maps integrado -->
+    <div class="container py-5">
+        <!-- envoltorio para fallback -->
+        <div id="mapWrapper">
+          <gmp-map
+            center="5.7146,-72.9294"
+            zoom="13"
+            map-id="DEMO_MAP_ID"
+            style="height: 400px; width: 100%; border-radius: 12px;"
+          >
+            <gmp-advanced-marker
+              position="5.7152,-72.9290"
+              title="Transversal 20"
+            ></gmp-advanced-marker>
+          </gmp-map>
+        </div>
+    </div>
+
+    <!-- reemplaza la carga directa por este cargador con onerror y timeout -->
+    <script>
+    (function(){
+      const API_KEY = 'AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg'; // tu key
+      const SRC = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=maps&v=beta`;
+      function showMapError(reason){
+        const wrapper = document.getElementById('mapWrapper');
+        if(!wrapper) return;
+        wrapper.innerHTML = '<div style="padding:24px;border:4px solid #6F4E37;border-radius:12px;background:#fff;color:#111;font-weight:bold;text-align:center;">No se pudo cargar el mapa. Revisa la consola (DevTools) para ver el error. Posibles causas: clave API inválida, restricciones de referrer o billing deshabilitado.</div>';
+        console.warn('Google Maps load failed:', reason);
+      }
+      // si el script ya existe, no volver a añadir
+      if(document.querySelector('script[data-gmp-loader]')) return;
+      const s = document.createElement('script');
+      s.setAttribute('data-gmp-loader','1');
+      s.src = SRC;
+      s.defer = true;
+      s.async = true;
+      s.onerror = function(){ showMapError('script load error (network or key)'); };
+      s.onload = function(){
+        // comprobación extra porque la API beta webcomponents puede no exponer window.google inmediatamente
+        if(!window.google || !window.google.maps){
+          // espera breve por si se inicializa un poco después
+          setTimeout(function(){
+            if(!window.google || !window.google.maps) showMapError('google.maps not available after load');
+          }, 1000);
+        } else {
+          console.info('Google Maps cargado correctamente');
+        }
+      };
+      document.head.appendChild(s);
+      // timeout genérico
+      setTimeout(function(){
+        if(!window.google || !window.google.maps) showMapError('timeout');
+      }, 8000);
+    })();
+    </script>
+    <!-- End Map -->
+
+    <!-- Start Contact -->
+    <div class="container py-5">
+        <div class="row py-5">
+            <form class="col-md-9 m-auto contact-form-bg" method="post" role="form">
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="inputname">Nombre</label>
+                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Name">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="inputemail">Correo</label>
+                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputsubject">Tema</label>
+                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Subject">
+                </div>
+                <div class="mb-3">
+                    <label for="inputmessage">Mensaje</label>
+                    <textarea class="form-control mt-1" id="message" name="Mensaje" placeholder="Message" rows="8"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col text-end mt-2">
+                        <button type="submit" class="btn btn-success btn-lg px-3">comunicate</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Contact -->
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Luz Artesanos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Calle 15#15-54
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:3133250714">3133250714</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Bolsos</a></li>
+                        <li><a class="text-decoration-none" href="#">Tulas</a></li>
+                        <li><a class="text-decoration-none" href="#">Maletas</a></li>
+                        <li><a class="text-decoration-none" href="#">Carteras</a></li>
+                        <li><a class="text-decoration-none" href="#">Riñoneras</a></li>
+                        <li><a class="text-decoration-none" href="#">Billeteras</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Informacion de la pagina</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Inicio</a></li>
+                        <li><a class="text-decoration-none" href="#">Sobre nosotros</a></li>
+                        <li><a class="text-decoration-none" href="#">Localizacion de la tienda</a></li>
+                        <li><a class="text-decoration-none" href="#">Tienda</a></li>
+                        <li><a class="text-decoration-none" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Email address</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2021 Company Name 
+                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <style>
+        /* Fondo de la página igual al inicio */
+body {
+    background-image: url('assets/img/fondo pagina.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Quitar fondo blanco/crema de contenedores, secciones y formularios */
+.bg-light,
+.container,
+.container-fluid,
+.row,
+.col-md-6,
+.col-md-9,
+.col,
+.form-control,
+.input-group-text,
+.modal-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Marco para el mapa de Google Maps en contactos */
+gmp-map {
+    border: 4px solid #6F4E37 !important;
+    border-radius: 12px !important;
+    box-sizing: border-box;
+}
+
+/* Cambia la fuente del título Contactanos a nosotros */
+h1.h1 {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 900 !important; /* Más negrilla */
+}
+
+.col-md-6.m-auto.text-center p {
+    font-weight: bold !important;
+    color: #111 !important;
+}
+
+.menu-hover {
+    transition: all 0.3s;
+    border-radius: 12px;
+    font-weight: bold;
+    padding: 8px 18px !important;
+    margin: 0 4px;
+    color: #6F4E37 !important;
+    background: transparent;
+    box-shadow: none;
+    display: inline-block;
+}
+.menu-hover:hover, .menu-hover:focus {
+    background: #6F4E37 !important; /* Café */
+    color: #fff !important;         /* Letras blancas */
+    font-weight: bold !important;
+    box-shadow: 0 4px 16px 0 rgba(111, 78, 55, 0.15), 0 1.5px 4px 0 rgba(111, 78, 55, 0.10);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+.contact-form-bg {
+    background: #fff !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(111, 78, 55, 0.10);
+    padding: 32px 24px;
+    opacity: 0.97;
+}
+.contact-form-bg,
+.contact-form-bg label,
+.contact-form-bg input,
+.contact-form-bg textarea,
+.contact-form-bg ::placeholder,
+.contact-form-bg button {
+    color: #111 !important;
+    font-weight: bold !important;
+}
+    </style>
+
+    <!-- Modal Login -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background: #fff; border-radius: 12px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel" style="font-weight:bold; color:#111;">Iniciar Sesión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginUser" class="form-label" style="font-weight:bold; color:#111;">Usuario</label>
+            <input type="text" class="form-control" id="loginUser" required style="font-weight:bold; color:#111;">
+          </div>
+          <div class="mb-3">
+            <label for="loginPass" class="form-label" style="font-weight:bold; color:#111;">Contraseña</label>
+            <input type="password" class="form-control" id="loginPass" required style="font-weight:bold; color:#111;">
+          </div>
+          <div id="loginError" class="text-danger mb-2" style="display:none; font-weight:bold;">Usuario o contraseña incorrectos</div>
+          <button type="submit" class="btn btn-success w-100" style="font-weight:bold;">Ingresar</button>
+        </form>
+        <div class="text-center mt-3">
+          <a href="#" id="showRegister" style="font-weight:bold; color:#6F4E37;">¿No tienes cuenta? Regístrate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background: #fff; border-radius: 12px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel" style="font-weight:bold; color:#111;">Registrarse</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="mb-3">
+            <label for="registerUser" class="form-label" style="font-weight:bold; color:#111;">Usuario</label>
+            <input type="text" class="form-control" id="registerUser" required style="font-weight:bold; color:#111;">
+          </div>
+          <div class="mb-3">
+            <label for="registerPass" class="form-label" style="font-weight:bold; color:#111;">Contraseña</label>
+            <input type="password" class="form-control" id="registerPass" required style="font-weight:bold; color:#111;">
+          </div>
+          <div id="registerError" class="text-danger mb-2" style="display:none; font-weight:bold;">El usuario ya existe</div>
+          <button type="submit" class="btn btn-success w-100" style="font-weight:bold;">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Mostrar modal de registro
+document.addEventListener('DOMContentLoaded', function() {
+    var showRegister = document.getElementById('showRegister');
+    if(showRegister){
+        showRegister.onclick = function(e) {
+            e.preventDefault();
+            var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+            if(loginModal) loginModal.hide();
+            var registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+            registerModal.show();
+        };
+    }
+});
+
+// Guardar usuarios en localStorage
+function saveUser(user, pass) {
+    let users = JSON.parse(localStorage.getItem('users') || '{}');
+    if (users[user]) return false;
+    users[user] = pass;
+    localStorage.setItem('users', JSON.stringify(users));
+    return true;
+}
+
+// Validar usuario y contraseña
+function validateUser(user, pass) {
+    let users = JSON.parse(localStorage.getItem('users') || '{}');
+    return users[user] && users[user] === pass;
+}
+
+// Registro
+document.addEventListener('DOMContentLoaded', function() {
+    var registerForm = document.getElementById('registerForm');
+    if(registerForm){
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('registerUser').value;
+            const pass = document.getElementById('registerPass').value;
+            if (saveUser(user, pass)) {
+                document.getElementById('registerError').style.display = 'none';
+                alert('¡Usuario registrado! Ahora puedes iniciar sesión.');
+                var registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                if(registerModal) registerModal.hide();
+                var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                loginModal.show();
+            } else {
+                document.getElementById('registerError').style.display = 'block';
+            }
+        });
+    }
+});
+
+// Login
+document.addEventListener('DOMContentLoaded', function() {
+    var loginForm = document.getElementById('loginForm');
+    if(loginForm){
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('loginUser').value;
+            const pass = document.getElementById('loginPass').value;
+            if(validateUser(user, pass)) {
+                document.getElementById('loginError').style.display = 'none';
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('loginUser', user);
+                alert('¡Bienvenido, ' + user + '!');
+                var modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                if(modal) modal.hide();
+                checkLogin();
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        });
+    }
+});
+
+// Mantener sesión y logout
+function checkLogin() {
+    const loggedIn = localStorage.getItem('loggedIn');
+    const user = localStorage.getItem('loginUser');
+    const userIcon = document.querySelector('.fa-user');
+    const userNameSpan = document.getElementById('userName');
+    if (loggedIn === 'true' && user) {
+        if(userIcon){
+            userIcon.classList.remove('text-dark');
+            userIcon.classList.add('text-success');
+            userIcon.title = 'Sesión iniciada como ' + user;
+        }
+        if(userNameSpan) userNameSpan.textContent = user;
+    } else {
+        if(userIcon){
+            userIcon.classList.remove('text-success');
+            userIcon.classList.add('text-dark');
+            userIcon.title = '';
+        }
+        if(userNameSpan) userNameSpan.textContent = '';
+    }
+}
+window.addEventListener('DOMContentLoaded', checkLogin);
+document.addEventListener('DOMContentLoaded', function() {
+    var userIcon = document.querySelector('.fa-user');
+    if(userIcon){
+        userIcon.addEventListener('dblclick', function() {
+            localStorage.removeItem('loggedIn');
+            localStorage.removeItem('loginUser');
+            alert('Sesión cerrada');
+            checkLogin();
+        });
+    }
+});
+</script>
+
+<!-- Robot flotante -->
+<div id="robotBot" style="position:fixed;bottom:30px;right:30px;z-index:9999;cursor:pointer;">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Robot" style="width:70px;height:70px;">
+    <div id="robotMsg" style="
+        display:none;
+        position:absolute;
+        bottom:80px;
+        right:0;
+        background:#fff;
+        color:#333;
+        padding:12px 18px;
+        border-radius:12px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.15);
+        font-weight:bold;
+        min-width:220px;
+        text-align:center;
+    ">
+        ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte?
+    </div>
+</div>
+<script>
+document.getElementById('robotBot').onclick = function() {
+    var msg = document.getElementById('robotMsg');
+    msg.style.display = 'block';
+    setTimeout(function() {
+        msg.style.display = 'none';
+    }, 3500);
+};
+</script>
+<!-- Puedes cambiar el texto del mensaje en el div robotMsg -->
+</body>
+
+</html>

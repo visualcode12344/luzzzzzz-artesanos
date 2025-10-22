@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zay Shop - Product Listing Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <style>
+        body {
+            background-image: url('assets/img/fondo pagina.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        .row {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+
+        #checkoutModal .form-control {
+            background-color: #222;
+            color: #fff;
+            border: 1px solid #444;
+        }
+
+        #checkoutModal .form-control:focus {
+            background-color: #222;
+            color: #fff;
+            border: 1.5px solid #6F4E37;
+        }
+
+        #checkoutModal label,
+        #checkoutModal .modal-title,
+        #checkoutModal option {
+            color: #fff !important;
+            font-weight: bold !important;
+        }
+
+        #metodoPago {
+            background-color: #222 !important;
+            color: #fff !important;
+            border: 1px solid #444;
+        }
+
+        #metodoPago option {
+            background-color: #222 !important;
+            color: #fff !important;
+        }
+
+        .menu-hover {
+            transition: all 0.3s;
+            border-radius: 12px;
+            font-weight: bold;
+            padding: 8px 18px !important;
+            margin: 0 4px;
+            color: #6F4E37 !important;
+            background: transparent;
+            box-shadow: none;
+            display: inline-block;
+        }
+
+        .menu-hover:hover,
+        .menu-hover:focus {
+            background: #6F4E37 !important;
+            color: #fff !important;
+            font-weight: bold !important;
+            box-shadow: 0 4px 16px 0 rgba(111, 78, 55, 0.15), 0 1.5px 4px 0 rgba(111, 78, 55, 0.10);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        .shop-top-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .shop-top-menu .list-inline-item {
+            margin-right: 30px !important;
+        }
+
+        .shop-top-menu .list-inline-item:last-child {
+            margin-right: 0 !important;
+        }
+
+        #loginModal .modal-content {
+            background: #fff !important;
+            color: #111 !important;
+            border-radius: 12px;
+        }
+
+        #loginModal label,
+        #loginModal input,
+        #loginModal button,
+        #loginModal .modal-title {
+            color: #111 !important;
+            font-weight: bold !important;
+        }
+
+        /* Bot / chat styles (single place) */
+        :root {
+            --bot-size: 60px;
+            --bot-margin: 20px;
+            --chat-width: 320px;
+        }
+
+        #robotBot {
+            position: fixed;
+            right: calc(var(--bot-margin));
+            bottom: calc(var(--bot-margin));
+            z-index: 2050;
+            cursor: pointer;
+            transition: transform .12s ease, bottom .12s ease;
+            width: var(--bot-size);
+            height: var(--bot-size);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        #robotBot img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        #robotChat {
+            display: none;
+            position: fixed;
+            right: calc(var(--bot-margin));
+            bottom: calc(var(--bot-margin) + var(--bot-size) + 12px);
+            width: var(--chat-width);
+            max-width: calc(100% - 40px);
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            z-index: 2060;
+        }
+
+        #robotChat .chat-header {
+            background: #6F4E37;
+            color: #fff;
+            padding: 12px 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #robotChat .chat-messages {
+            height: 180px;
+            padding: 12px;
+            overflow-y: auto;
+            font-size: .95rem;
+            background: #f7f7f7;
+        }
+
+        #robotChat .chat-form {
+            display: flex;
+            border-top: 1px solid #eee;
+            padding: 8px;
+        }
+
+        #robotChat input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        #robotChat button[type="submit"] {
+            margin-left: 8px;
+            background: #6F4E37;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --chat-width: calc(100% - 28px);
+            }
+
+            #robotBot {
+                right: 12px;
+                bottom: 12px;
+            }
+
+            #robotChat {
+                right: 12px;
+                left: 12px;
+                bottom: calc(12px + var(--bot-size) + 8px);
+                width: auto;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:3133250714">3133250714</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">Luz Artesanos</a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link menu-hover" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-hover" href="about.html">Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-hover" href="shop.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-hover" href="contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal"
+                        data-bs-target="#cartModal">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal"
+                        data-bs-target="#loginModal" id="userNav">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        <span id="userName" class="text-success fw-bold"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modals / Cart / Login (kept same) -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Carrito de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group mb-3" id="cart-items"></ul>
+            <div class="d-flex justify-content-between">
+              <strong>Total:</strong>
+              <strong id="cart-total">$0</strong>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="btnCheckout">Finalizar compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login/Register modals -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginUser" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="loginUser" required>
+              </div>
+              <div class="mb-3">
+                <label for="loginPass" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="loginPass" required>
+              </div>
+              <div id="loginError" class="text-danger mb-2" style="display:none;">Usuario o contraseña incorrectos</div>
+              <button type="submit" class="btn btn-success w-100">Entrar</button>
+            </form>
+            <div class="text-center mt-2">
+              <a href="#" id="showRegister">¿No tienes cuenta? Regístrate</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Registrarse</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="registerUser" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="registerUser" required>
+              </div>
+              <div class="mb-3">
+                <label for="registerPass" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="registerPass" required>
+              </div>
+              <div id="registerError" class="text-danger mb-2" style="display:none;">El usuario ya existe</div>
+              <button type="submit" class="btn btn-success w-100">Registrarse</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Content -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Sidebar de Categorías a la izquierda -->
+            <div class="col-lg-3">
+                <h1 class="h2 pb-4">Categorias</h1>
+                <ul class="list-unstyled templatemo-accordion">
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Productos
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Mochilas</a></li>
+                            <li><a class="text-decoration-none" href="#">Tulas</a></li>
+                            <li><a class="text-decoration-none" href="#">Carteras</a></li>
+                            <li><a class="text-decoration-none" href="#">Riñoneras</a></li>
+                            <li><a class="text-decoration-none" href="#">Billeteras</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Productos en el centro -->
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="lo mas nuevo.html"><b>Lo mas nuevo</b></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="promociones web.html"><b>promociones</b></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="lo mas vendido.html"><b>Lo mas vendido</b></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- PRODUCT CARDS (keeps behaviour consistent) -->
+                    <!-- Producto: Maleta -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/Bolso inicio.jpg" alt="Maleta">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Maleta" data-price="100000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none fw-bold">Maleta</a>
+                                <p class="text-center mb-0">$110.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Bolso de mano -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/bolso con lineas rojas.png" alt="Bolso de mano">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="bolso de mano.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="bolso de mano.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Bolso de mano" data-price="100000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none fw-bold">Bolso</a>
+                                <p class="text-center mb-0">$65.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Tulas -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/primer monedero.png" alt="Tulas">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="Tula.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Tula.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Tulas" data-price="50000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Tula.html" class="h3 text-decoration-none fw-bold"> Monedero</a>
+                                <p class="text-center mb-0">$25.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: mochilita -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/bolso mas nuevo.png" alt="Mochilita">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="Mochilita.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Mochilita.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Mochilita" data-price="55000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Mochilita.html" class="h3 text-decoration-none fw-bold">bolso</a>
+                                <p class="text-center mb-0">$50.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Content -->
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Luz Artesanos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Calle 15#15-54
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:3133250714">3133250714</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Bolsos</a></li>
+                        <li><a class="text-decoration-none" href="#">Tulas</a></li>
+                        <li><a class="text-decoration-none" href="#">Maletas</a></li>
+                        <li><a class="text-decoration-none" href="#">Carteras</a></li>
+                        <li><a class="text-decoration-none" href="#">Riñoneras</a></li>
+                        <li><a class="text-decoration-none" href="#">Billeteras</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Informacion de la pagina</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Inicio</a></li>
+                        <li><a class="text-decoration-none" href="#">Sobre nosotros</a></li>
+                        <li><a class="text-decoration-none" href="#">localizacion de la tienda</a></li>
+                        <li><a class="text-decoration-none" href="#">Tienda</a></li>
+                        <li><a class="text-decoration-none" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Email address</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2021 Company Name
+                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Bot / Chat elements (single instance) -->
+    <div id="robotBot" aria-label="Abrir chat de Luz Artesanos" title="Chatear con Luz Artesanos">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Robot">
+    </div>
+
+    <div id="robotChat" role="dialog" aria-hidden="true" aria-label="Chat con Luz Artesanos">
+        <div class="chat-header">
+            Chat con Luz Artesanos
+            <button id="closeChat" aria-label="Cerrar chat" style="cursor:pointer;border:none;background:transparent;color:#fff;font-size:20px;">×</button>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <form id="chatForm" class="chat-form" role="search">
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." aria-label="Escribe tu mensaje">
+            <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <!-- Cart functional script (keeps behaviour consistent) -->
+    <script>
+    (function(){
+        'use strict';
+        const CART_KEY = 'cart';
+        let cart = [];
+        function loadCart(){ try{ cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; }catch(e){ cart = []; } }
+        function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+        function formatMoney(n){ return '$' + Number(n).toLocaleString(); }
+        function updateCartModal(){
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            if(!cartItems || !cartTotal) return;
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, idx) => {
+                total += item.price * item.qty;
+                const li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.innerHTML = `<div>${item.name}</div>
+                    <div class="d-flex align-items-center">
+                      <span class="badge bg-success rounded-pill me-2">${formatMoney(item.price)} x${item.qty}</span>
+                      <button class="btn btn-danger btn-sm btn-remove-item" data-idx="${idx}" aria-label="Eliminar">&times;</button>
+                    </div>`;
+                cartItems.appendChild(li);
+            });
+            cartTotal.textContent = formatMoney(total);
+            document.querySelectorAll('.nav-icon .badge').forEach(b => { b.textContent = cart.reduce((s,i)=>s+i.qty,0); });
+            saveCart();
+            document.querySelectorAll('.btn-remove-item').forEach(btn=>{ btn.onclick = function(){ const idx = parseInt(this.dataset.idx); if(!isNaN(idx)){ cart.splice(idx,1); updateCartModal(); } }; });
+        }
+        function getQtyFromCard(){ return 1; }
+        document.addEventListener('DOMContentLoaded', function(){
+            loadCart(); updateCartModal();
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function(e){
+                    e.preventDefault();
+                    const name = this.dataset.name || 'Producto';
+                    const price = parseInt(this.dataset.price) || 0;
+                    const qty = getQtyFromCard();
+                    const found = cart.find(i=>i.name===name && i.price===price);
+                    if(found) found.qty += qty; else cart.push({ name, price, qty });
+                    saveCart(); updateCartModal();
+                    // show cart modal
+                    const cartEl = document.getElementById('cartModal');
+                    if(cartEl && window.bootstrap && bootstrap.Modal){ const inst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(cartEl) : new bootstrap.Modal(cartEl); if(inst && typeof inst.show === 'function') inst.show(); }
+                });
+            });
+        });
+    })();
+    </script>
+
+    <!-- Login / Register / Checkout scripts (kept simple and safe) -->
+    <script>
+(function(){
+    function saveUser(user, pass) {
+        let users = JSON.parse(localStorage.getItem('users') || '{}');
+        if (users[user]) return false;
+        users[user] = pass;
+        localStorage.setItem('users', JSON.stringify(users));
+        return true;
+    }
+    function validateUser(user, pass) {
+        let users = JSON.parse(localStorage.getItem('users') || '{}');
+        return users[user] && users[user] === pass;
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+        var showRegister = document.getElementById('showRegister');
+        if(showRegister){
+            showRegister.onclick = function(e){ e.preventDefault(); var loginModal = (window.bootstrap && bootstrap.Modal) ? bootstrap.Modal.getInstance(document.getElementById('loginModal')) : null; if(loginModal) loginModal.hide(); var registerModal = (window.bootstrap && bootstrap.Modal) ? new bootstrap.Modal(document.getElementById('registerModal')) : null; if(registerModal) registerModal.show(); };
+        }
+        var registerForm = document.getElementById('registerForm');
+        if(registerForm){
+            registerForm.addEventListener('submit', function(e){ e.preventDefault(); const user = document.getElementById('registerUser').value; const pass = document.getElementById('registerPass').value; if (saveUser(user, pass)) { document.getElementById('registerError').style.display = 'none'; alert('¡Usuario registrado! Ahora puedes iniciar sesión.'); var registerModal = (window.bootstrap && bootstrap.Modal) ? bootstrap.Modal.getInstance(document.getElementById('registerModal')) : null; if(registerModal) registerModal.hide(); var loginModal = (window.bootstrap && bootstrap.Modal) ? new bootstrap.Modal(document.getElementById('loginModal')) : null; if(loginModal) loginModal.show(); } else { document.getElementById('registerError').style.display = 'block'; } });
+        }
+        var loginForm = document.getElementById('loginForm');
+        if(loginForm){
+            loginForm.addEventListener('submit', function(e){ e.preventDefault(); const user = document.getElementById('loginUser').value; const pass = document.getElementById('loginPass').value; if(validateUser(user, pass)) { document.getElementById('loginError').style.display = 'none'; localStorage.setItem('loggedIn','true'); localStorage.setItem('loginUser', user); alert('¡Bienvenido, ' + user + '!'); var modal = (window.bootstrap && bootstrap.Modal) ? bootstrap.Modal.getInstance(document.getElementById('loginModal')) : null; if(modal) modal.hide(); checkLogin(); } else { document.getElementById('loginError').style.display = 'block'; } });
+        }
+        var userNav = document.getElementById('userNav');
+        if(userNav){
+            userNav.addEventListener('dblclick', function(){ localStorage.removeItem('loggedIn'); localStorage.removeItem('loginUser'); alert('Sesión cerrada'); checkLogin(); });
+        }
+
+        // handler seguro para btnCheckout (evita errores si checkoutModal no existe)
+        var btnCheckout = document.getElementById('btnCheckout');
+        if(btnCheckout){
+            btnCheckout.addEventListener('click', function(){
+                var cartModalEl = document.getElementById('cartModal');
+                var cartInst = (window.bootstrap && bootstrap.Modal && bootstrap.Modal.getInstance) ? bootstrap.Modal.getInstance(cartModalEl) : null;
+                if(cartInst && typeof cartInst.hide === 'function') cartInst.hide();
+
+                var checkoutEl = document.getElementById('checkoutModal');
+                // Si existe checkoutModal y bootstrap está disponible, mostrarlo.
+                if(checkoutEl && window.bootstrap && (bootstrap.Modal || bootstrap.Modal.getOrCreateInstance)){
+                    var checkoutInst = (bootstrap.Modal.getOrCreateInstance) ? bootstrap.Modal.getOrCreateInstance(checkoutEl) : new bootstrap.Modal(checkoutEl);
+                    setTimeout(()=> { if(checkoutInst && typeof checkoutInst.show === 'function') checkoutInst.show(); }, 300);
+                } else {
+                    // Fallback: avisar o reabrir carrito. Evita excepción.
+                    console.warn('checkoutModal no está presente en esta página.');
+                    alert('Formulario de pago no disponible en esta página.');
+                    if(cartInst && typeof cartInst.show === 'function') cartInst.show();
+                }
+            });
+        }
+
+        var checkoutForm = document.getElementById('checkoutForm');
+        if(checkoutForm){
+            checkoutForm.addEventListener('submit', function(e){
+                e.preventDefault();
+                var nombre = document.getElementById('nombre').value;
+                var direccion = document.getElementById('direccion').value;
+                var telefono = document.getElementById('telefono').value;
+                var metodoPago = document.getElementById('metodoPago').value;
+                let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                let productos = cart.length ? cart.map(item => `• ${item.name} x${item.qty} ($${item.price.toLocaleString()} c/u)`).join('\n') : 'Sin productos seleccionados';
+                var mensaje = '¡Hola! Quiero confirmar mi compra:\n\n' + 'Nombre: ' + nombre + '\n' + 'Dirección: ' + direccion + '\n' + 'Teléfono: ' + telefono + '\n' + 'Método de pago: ' + metodoPago + '\n\n' + 'Productos:\n' + productos;
+                var numeroWhatsApp = "3125889261";
+                window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`, '_blank');
+                var checkoutModalEl = document.getElementById('checkoutModal');
+                var checkoutModal = (window.bootstrap && bootstrap.Modal && bootstrap.Modal.getInstance) ? bootstrap.Modal.getInstance(checkoutModalEl) : null;
+                if(checkoutModal && typeof checkoutModal.hide === 'function') checkoutModal.hide();
+                checkoutForm.reset();
+            });
+        }
+        checkLogin();
+    });
+    function checkLogin() {
+        const loggedIn = localStorage.getItem('loggedIn');
+        const user = localStorage.getItem('loginUser');
+        const userNameSpan = document.getElementById('userName');
+        const userIcon = document.querySelector('.fa-user');
+        if (loggedIn === 'true' && user) {
+            if(userNameSpan) userNameSpan.textContent = ' ' + user;
+            if(userIcon) { userIcon.classList.remove('text-dark'); userIcon.classList.add('text-success'); userIcon.title = 'Sesión iniciada como ' + user; }
+        } else {
+            if(userNameSpan) userNameSpan.textContent = '';
+            if(userIcon) { userIcon.classList.remove('text-success'); userIcon.classList.add('text-dark'); userIcon.title = ''; }
+        }
+    }
+})();
+    </script>
+
+    <!-- Bot / Chat behavior and footer-overlap prevention -->
+    <script>
+/* Bloque eliminado para evitar doble inicialización del bot.
+   El script mejorado y único se deja más abajo en el archivo. */
+</script>
+
+    <!-- Bot / Chat behavior (single instance, improved) -->
+    <script>
+(function(){
+  // Evita doble inicialización
+  document.addEventListener('DOMContentLoaded', function(){
+    try {
+      const bot = document.getElementById('robotBot');
+      const chat = document.getElementById('robotChat');
+      const closeBtn = document.getElementById('closeChat');
+      const chatForm = document.getElementById('chatForm');
+      const chatInput = document.getElementById('chatInput');
+      const chatMessages = document.getElementById('chatMessages');
+      const footer = document.getElementById('tempaltemo_footer');
+
+      if(!bot && !chat) return;
+
+      if(bot) {
+        if(bot.dataset.__botInit === '1') return;
+        bot.dataset.__botInit = '1';
+      }
+
+      function getSafeInsetBottom(){
+        try{
+          const v = getComputedStyle(document.documentElement).getPropertyValue('--safe-area-inset-bottom') || '0';
+          return parseInt(v,10) || 0;
+        }catch(e){ return 0; }
+      }
+
+      function setBotAndChatOffset(){
+        // usa requestAnimationFrame para calcular después de render
+        requestAnimationFrame(function(){
+          try{
+            const margin = 20;
+            const safe = getSafeInsetBottom();
+            if(!footer){
+              if(bot) bot.style.bottom = (margin + safe) + 'px';
+              if(chat){
+                const h = bot ? bot.offsetHeight : 60;
+                chat.style.bottom = (margin + h + 12 + safe) + 'px';
+              }
+              return;
+            }
+            const fRect = footer.getBoundingClientRect();
+            const winH = window.innerHeight || document.documentElement.clientHeight;
+            const overlap = Math.max(0, winH - fRect.top);
+            if(bot) bot.style.bottom = (margin + overlap + safe) + 'px';
+            if(chat){
+              const h = bot ? bot.offsetHeight : 60;
+              chat.style.bottom = (margin + overlap + h + 12 + safe) + 'px';
+            }
+          }catch(err){
+            console.warn('setBotAndChatOffset error', err);
+          }
+        });
+      }
+
+      function openChat(show){
+        if(!chat) return;
+        chat.style.display = show ? 'block' : 'none';
+        chat.setAttribute('aria-hidden', show ? 'false' : 'true');
+        if(show && chatInput) chatInput.focus();
+        setBotAndChatOffset();
+      }
+
+      function safeAppendMessage(sender, text, isUser){
+        if(!chatMessages) return;
+        const d = document.createElement('div');
+        d.style.marginBottom = '8px';
+        d.innerHTML = `<b style="color:${isUser? '#6F4E37' : '#333'}">${sender}:</b> <span>${text}</span>`;
+        chatMessages.appendChild(d);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function getBotReply(msg){
+        msg = (msg||'').toLowerCase();
+        if(msg.includes('maleta')) return 'La maleta cuesta $120.000 COP.';
+        if(msg.includes('mochila')) return 'La mochila cuesta $95.000 COP.';
+        if(msg.includes('bolso')) return 'El bolso cuesta $80.000 COP.';
+        if(msg.includes('tula')) return 'La tula cuesta $60.000 COP.';
+        if(msg.includes('cartera')) return 'La cartera cuesta $45.000 COP.';
+        if(msg.includes('riñonera')) return 'La riñonera cuesta $35.000 COP.';
+        if(msg.includes('billetera')) return 'La billetera cuesta $25.000 COP.';
+        if(msg.includes('hola')) return '¡Hola! ¿En qué puedo ayudarte hoy?';
+        if(msg.includes('gracias')) return '¡Gracias a ti por escribirnos!';
+        if(msg.includes('ubicación')||msg.includes('dirección')||msg.includes('localizacion')) return 'Estamos en Calle 15#15-54, Sogamoso, Boyacá.';
+        if(msg.includes('contacto')||msg.includes('whatsapp')) return 'Puedes contactarnos al WhatsApp 3133250714 o al correo luzdvega2606@gmail.com.';
+        return 'No entendí tu mensaje. Puedes preguntar por precios, productos o ubicación.';
+      }
+
+      // Eventos seguros (remueve handlers previos si existen)
+      function addOnce(el, ev, fn){
+        if(!el) return;
+        el.removeEventListener(ev, fn); // intento de limpieza
+        el.addEventListener(ev, fn);
+      }
+
+      addOnce(bot, 'click', function(e){
+        e.stopPropagation();
+        openChat(true);
+      });
+
+      addOnce(closeBtn, 'click', function(e){
+        e.stopPropagation();
+        openChat(false);
+      });
+
+      // Cierra al hacer clic fuera
+      document.removeEventListener('__robot_doc_click', document.__robot_doc_click_fn);
+      document.__robot_doc_click_fn = function(e){
+        if(!chat || chat.style.display !== 'block') return;
+        if(e.target.closest && (e.target.closest('#robotChat') || e.target.closest('#robotBot'))) return;
+        openChat(false);
+      };
+      document.addEventListener('click', document.__robot_doc_click_fn);
+
+      if(chatForm){
+        addOnce(chatForm, 'submit', function(e){
+          e.preventDefault();
+          if(!chatInput) return;
+          const m = chatInput.value.trim();
+          if(!m) return;
+          safeAppendMessage('Tú', m, true);
+          chatInput.value = '';
+          setTimeout(function(){ safeAppendMessage('Robot', getBotReply(m), false); }, 600);
+        });
+      }
+
+      // ajustar posición en eventos relevantes
+      ['load','resize','scroll','orientationchange'].forEach(ev => {
+        window.addEventListener(ev, setBotAndChatOffset, {passive:true});
+      });
+
+      // llamada inicial
+      setBotAndChatOffset();
+
+    } catch(ex) {
+      console.error('Bot init error:', ex);
+    }
+  });
+})();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zay Shop - Página 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <style>
+        body {
+            background-image: url('assets/img/fondo pagina.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        .container,
+        .row,
+        .col-lg-3,
+        .col-lg-9,
+        .col-md-4,
+        .col-md-6,
+        .card,
+        .card-body,
+        .product-wap,
+        .shop-top-menu,
+        .list-group-item,
+        .templatemo-accordion,
+        ul.templatemo-accordion,
+        ul.templatemo-accordion li,
+        .pagination,
+        .input-group-text,
+        .form-control,
+        .card-img,
+        .card-img-top,
+        .card-img-overlay,
+        .product-overlay,
+        .card img,
+        .product-wap img {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+        body, p, li, a, h1, h2, h3, h4, h5, h6 {
+            color: #6F4E37 !important;
+        }
+        .navbar-nav .nav-link {
+            transition: all 0.2s;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            border-bottom: 2px solid #6F4E37;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:3133250714">3133250714</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                Luz Artesanos
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <!-- Carrito de compras (ícono en el navbar) -->
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" id="userNav">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        <span id="userName" class="text-success fw-bold"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal del carrito de compras -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group mb-3" id="cart-items"></ul>
+                    <div class="d-flex justify-content-between">
+                        <strong>Total:</strong>
+                        <strong id="cart-total">$0</strong>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="checkout.html" class="btn btn-success">Finalizar compra</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginUser" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="loginUser" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPass" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPass" required>
+                        </div>
+                        <div id="loginError" class="text-danger mb-2" style="display:none;">Usuario o contraseña incorrectos</div>
+                        <button type="submit" class="btn btn-success w-100">Entrar</button>
+                    </form>
+                    <div class="text-center mt-2">
+                        <a href="#" id="showRegister">¿No tienes cuenta? Regístrate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Registro -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Registrarse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="registerUser" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="registerUser" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPass" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="registerPass" required>
+                        </div>
+                        <div id="registerError" class="text-danger mb-2" style="display:none;">El usuario ya existe</div>
+                        <button type="submit" class="btn btn-success w-100">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Content -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <h1 class="h2 pb-4">Categorias</h1>
+                <ul class="list-unstyled templatemo-accordion">
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Genero
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul class="collapse show list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Hombre</a></li>
+                            <li><a class="text-decoration-none" href="#">Mujer</a></li>
+                        </ul>
+                    </li>
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Productos
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Mochilas</a></li>
+                            <li><a class="text-decoration-none" href="#">Tulas</a></li>
+                            <li><a class="text-decoration-none" href="#">Carteras</a></li>
+                            <li><a class="text-decoration-none" href="#">Riñoneras</a></li>
+                            <li><a class="text-decoration-none" href="#">Billeteras</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Productos en el centro -->
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="lo mas nuevo.html"><b>Lo mas nuevo</b></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="promociones web.html"><b>promociones</b></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="lo mas vendido.html"><b>Lo mas vendido</b></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Aquí van los productos -->
+                    <!-- Producto 1 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/maleta shop 2.png" alt="Producto 1">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="mochila luz.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="mochila luz.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 1" data-price="10000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Maleta</a>
+                                <p class="text-center mb-0">$100.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/bolso bueno shop 2.png" alt="Producto 2">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="bolso bueno.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="bolso bueno.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 2" data-price="20000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Producto 2</a>
+                                <p class="text-center mb-0">$20.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/bolso mariposas.png" alt="Producto 3">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="bolso mariposa.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="bolso mariposa.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 3" data-price="30000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Bolso</a>
+                                <p class="text-center mb-0">$48.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 4 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/bolso rayitas.png" alt="Producto 4">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="bolso de rayas rojas.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="bolso de rayas rojas.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 4" data-price="40000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Bolso</a>
+                                <p class="text-center mb-0">$35.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 5 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/bolso sueño.png" alt="Producto 5">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="sueña en grande.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="sueña en grande.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 5" data-price="50000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Bolso</a>
+                                <p class="text-center mb-0">$70.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 6 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/bolso luz.png" alt="Producto 6">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="bolso despues de sueño.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="bolso despues de sueño.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 6" data-price="60000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">bolso</a>
+                                <p class="text-center mb-0">$60.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 7 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/tula shop 2.png" alt="Producto 7">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="tula con hilo.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="tula con hilo.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 7" data-price="70000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Tula</a>
+                                <p class="text-center mb-0">$25.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 8 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/bolso colombia.png" alt="Producto 8">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="bolso colombia.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="bolso colombia.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 8" data-price="80000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Bolso</a>
+                                <p class="text-center mb-0">$35.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Producto 9 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <a href="shop-single.html">
+                                    <img class="card-img rounded-0 img-fluid" src="assets/img/bolso cafe shop 2.png" alt="Producto 9">
+                                </a>
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="bolso despues de colombia.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="bolso despues de colombia.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Producto 9" data-price="90000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">bolso</a>
+                                <p class="text-center mb-0">$40.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul class="pagination pagination-lg justify-content-end">
+                        <li class="page-item">
+                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="shop.html">1</a>
+                        </li>
+                        <li class="page-item disabled">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Content -->
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <!-- ...footer igual que en tu archivo... -->
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <!-- Script del carrito funcional -->
+    <script>
+    let cart = [];
+
+    // Cargar carrito desde localStorage al iniciar
+    function loadCart() {
+        const stored = localStorage.getItem('cart');
+        cart = stored ? JSON.parse(stored) : [];
+    }
+
+    // Guardar carrito en localStorage
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function updateCartModal() {
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        cartItems.innerHTML = '';
+        let total = 0;
+        cart.forEach((item, idx) => {
+            total += item.price * item.qty;
+            const li = document.createElement('li');
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            li.innerHTML = `
+                ${item.name} 
+                <span class="badge bg-success rounded-pill">$${item.price.toLocaleString()} x${item.qty}</span>
+                <button class="btn btn-danger btn-sm ms-2 btn-remove-item" data-idx="${idx}">&times;</button>
+            `;
+            cartItems.appendChild(li);
+        });
+        cartTotal.textContent = `$${total.toLocaleString()}`;
+        // Actualiza el número del ícono del carrito
+        document.querySelectorAll('.nav-icon .badge').forEach(badge => {
+            badge.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+        });
+        saveCart();
+
+        // Evento para borrar producto
+        document.querySelectorAll('.btn-remove-item').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const idx = parseInt(this.getAttribute('data-idx'));
+                cart.splice(idx, 1);
+                updateCartModal();
+            });
+        });
+    }
+
+    // Espera a que el DOM esté listo
+    document.addEventListener('DOMContentLoaded', function() {
+        loadCart();
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const name = this.getAttribute('data-name');
+                const price = parseInt(this.getAttribute('data-price'));
+                const found = cart.find(item => item.name === name && item.price === price);
+                if (found) {
+                    found.qty += 1;
+                } else {
+                    cart.push({ name, price, qty: 1 });
+                }
+                updateCartModal();
+            });
+        });
+        updateCartModal();
+    });
+    </script>
+
+    <!-- Script de Login y mostrar usuario -->
+    <script>
+    // Mostrar modal de registro
+    document.addEventListener('DOMContentLoaded', function() {
+        var showRegister = document.getElementById('showRegister');
+        if(showRegister){
+            showRegister.onclick = function(e) {
+                e.preventDefault();
+                var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                loginModal.hide();
+                var registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+                registerModal.show();
+            };
+        }
+    });
+
+    // Guardar usuarios en localStorage
+    function saveUser(user, pass) {
+        let users = JSON.parse(localStorage.getItem('users') || '{}');
+        if (users[user]) return false;
+        users[user] = pass;
+        localStorage.setItem('users', JSON.stringify(users));
+        return true;
+    }
+
+    // Validar usuario y contraseña
+    function validateUser(user, pass) {
+        let users = JSON.parse(localStorage.getItem('users') || '{}');
+        return users[user] && users[user] === pass;
+    }
+
+    // Registro
+    document.addEventListener('DOMContentLoaded', function() {
+        var registerForm = document.getElementById('registerForm');
+        if(registerForm){
+            registerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const user = document.getElementById('registerUser').value;
+                const pass = document.getElementById('registerPass').value;
+                if (saveUser(user, pass)) {
+                    document.getElementById('registerError').style.display = 'none';
+                    alert('¡Usuario registrado! Ahora puedes iniciar sesión.');
+                    var registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                    registerModal.hide();
+                    var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                    loginModal.show();
+                } else {
+                    document.getElementById('registerError').style.display = 'block';
+                }
+            });
+        }
+    });
+
+    // Login
+    document.addEventListener('DOMContentLoaded', function() {
+        var loginForm = document.getElementById('loginForm');
+        if(loginForm){
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const user = document.getElementById('loginUser').value;
+                const pass = document.getElementById('loginPass').value;
+                if(validateUser(user, pass)) {
+                    document.getElementById('loginError').style.display = 'none';
+                    localStorage.setItem('loggedIn', 'true');
+                    localStorage.setItem('loginUser', user);
+                    alert('¡Bienvenido, ' + user + '!');
+                    var modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                    modal.hide();
+                    checkLogin();
+                } else {
+                    document.getElementById('loginError').style.display = 'block';
+                }
+            });
+        }
+    });
+
+    // Mostrar nombre de usuario y logout
+    function checkLogin() {
+        const loggedIn = localStorage.getItem('loggedIn');
+        const user = localStorage.getItem('loginUser');
+        const userNameSpan = document.getElementById('userName');
+        const userIcon = document.querySelector('.fa-user');
+        if (loggedIn === 'true' && user) {
+            if(userNameSpan) userNameSpan.textContent = ' ' + user;
+            if(userIcon) {
+                userIcon.classList.remove('text-dark');
+                userIcon.classList.add('text-success');
+                userIcon.title = 'Sesión iniciada como ' + user;
+            }
+        } else {
+            if(userNameSpan) userNameSpan.textContent = '';
+            if(userIcon) {
+                userIcon.classList.remove('text-success');
+                userIcon.classList.add('text-dark');
+                userIcon.title = '';
+            }
+        }
+    }
+    window.addEventListener('DOMContentLoaded', checkLogin);
+    document.addEventListener('DOMContentLoaded', function() {
+        var userNav = document.getElementById('userNav');
+        if(userNav){
+            userNav.addEventListener('dblclick', function() {
+                localStorage.removeItem('loggedIn');
+                localStorage.removeItem('loginUser');
+                alert('Sesión cerrada');
+                checkLogin();
+            });
+        }
+    });
+    </script>
+
+    <script>
+    var numeroWhatsApp = "3125889261"; // <-- Este es el nuevo número
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var userNav = document.getElementById('userNav');
+        if(userNav){
+            userNav.addEventListener('click', function() {
+                var loggedIn = localStorage.getItem('loggedIn');
+                if(loggedIn === 'true') {
+                    var user = localStorage.getItem('loginUser');
+                    alert('¡Bienvenido de nuevo, ' + user + '!');
+                } else {
+                    var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                    loginModal.show();
+                }
+            });
+        }
+
+        // Enviar mensaje de WhatsApp
+        var sendMessage = document.getElementById('sendMessage');
+        if(sendMessage){
+            sendMessage.addEventListener('click', function() {
+                var message = "Hola, estoy interesado en más información.";
+                window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(message), "_blank");
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>

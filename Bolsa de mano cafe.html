@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zay Shop - Product Detail Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+
+    <style>
+        body {
+            background-image: url('assets/img/fondo pagina.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        .color-swatch{ width:44px;height:44px;border-radius:50%;display:inline-block;border:4px solid #fff;box-shadow:0 3px 8px rgba(0,0,0,0.25);cursor:pointer; }
+        .color-swatch.active{ outline:3px solid rgba(255,255,255,0.85); transform:translateY(-2px); }
+        #color-black{ background:#000; }
+        #color-grey{ background:#808080; }
+    </style>
+<!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:3133250714">3133250714</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                Luz Artesanos
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                        <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" id="userNav">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        <!-- badge removido -->
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Search Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Open Content -->
+    <section class="bg-light">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-lg-5 mt-5">
+                    <div class="card mb-3">
+                        <img class="card-img img-fluid" src="assets/img/bolso cafe shop 2.png" alt="Card image cap" id="product-detail">
+                        <div class="mt-3 d-flex justify-content-center align-items-center" aria-hidden="true" style="gap:14px;">
+                            <button id="color-black" class="color-swatch active" aria-label="Negra" title="Negra"></button>
+                            <button id="color-grey" class="color-swatch" aria-label="Gris" title="Gris"></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- col end -->
+
+                <div class="col-lg-7 mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="productForm" onsubmit="return false;">
+                                <h1 class="h2">Bolso</h1>
+                                <p class="h3 py-2" id="product-price">$40.000</p>
+                                <p class="py-2">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-secondary"></i>
+                                    <span class="list-inline-item text-dark">Rating 4.8 |</span>
+                                </p>
+
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><h6>Marca:</h6></li>
+                                    <li class="list-inline-item"><p class="text-dark"><strong style="color:#000;">Luz Artesanos</strong></p></li>
+                                </ul>
+
+                                <h6>Descripcion:</h6>
+                                <p>Este bolso destaca por su diseño simple, elegante y funcional. Confeccionado artesanalmente en material resistente y de textura suave, es ideal para quienes buscan un accesorio versátil para el día a día.</p>
+
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><h6> Color:</h6></li>
+                                    <li class="list-inline-item"><p class="text-dark"><strong id="product-color-text" style="color:#000;">Gris,Gris claro</strong></p></li>
+                                </ul>
+
+                                <h6>Especificaciones:</h6>
+                                <ul class="list-unstyled pb-3">
+                                    <li>37x30</li>
+                                    <li>Tela lona costeña</li>
+                                    <li>Diseños unicos y personalizados</li>
+                                    <li>Al color de tu gusto</li>
+                                
+                                </ul>
+
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <ul class="list-inline pb-3 mb-0">
+                                            <li class="list-inline-item text-right">
+                                                Cantidad
+                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                            </li>
+                                            <li class="list-inline-item"><button type="button" class="btn btn-success" id="btn-minus">-</button></li>
+                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                            <li class="list-inline-item"><button type="button" class="btn btn-success" id="btn-plus">+</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="row pb-3">
+                                    <div class="col d-grid mb-2">
+                                        <button type="button" id="btn-buy" class="btn btn-success btn-lg" data-name="Maleta" data-price="120000">Comprar</button>
+                                    </div>
+                                    <div class="col d-grid mb-2">
+                                        <button type="button" id="btn-add-to-cart" class="btn btn-success btn-lg" data-name="Maleta" data-price="120000">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Content -->
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Carrito de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group mb-3" id="cart-items"></ul>
+            <div class="d-flex justify-content-between">
+              <strong>Total:</strong>
+              <strong id="cart-total">$0</strong>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="btnCheckout">Finalizar compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content login-bg" style="background:#a67c52;color:#000;">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="loginModalLabel" style="color:#000;">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginUser" class="form-label" style="color:#000;">Usuario</label>
+                <input type="text" class="form-control" id="loginUser" required style="background:#fff;color:#000;" placeholder="Ingresa tu usuario">
+              </div>
+
+              <div class="mb-3">
+                <label for="loginPass" class="form-label" style="color:#000;">Contraseña</label>
+                <input type="password" class="form-control" id="loginPass" required style="background:#fff;color:#000;" placeholder="Ingresa tu contraseña">
+              </div>
+              <div id="loginError" class="text-danger mb-2" style="display:none;">Usuario o contraseña incorrectos</div>
+              <button type="submit" class="btn btn-light w-100">Entrar</button>
+            </form>
+            <div class="text-center mt-2"><a href="#" id="showRegister" style="color:#000;">¿No tienes cuenta? Regístrate</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Registrarse</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="registerUser" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="registerUser" required>
+              </div>
+              <div class="mb-3">
+                <label for="registerPass" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="registerPass" required>
+              </div>
+              <div id="registerError" class="text-danger mb-2" style="display:none;">El usuario ya existe</div>
+              <button type="submit" class="btn btn-success w-100">Registrarse</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark" style="border-radius: 10px;">
+          <div class="modal-header">
+            <h5 class="modal-title text-light fw-bold" id="checkoutModalLabel"><strong>Formulario de Compra</strong></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="checkoutForm">
+              <div class="mb-3">
+                <label for="nombre" class="form-label text-light fw-bold"><strong>Nombre completo</strong></label>
+                <input type="text" class="form-control fw-bold" id="nombre" required placeholder="Ingresa tu nombre completo" style="background:#fff;color:#000;border:1px solid #ccc;">
+              </div>
+              <div class="mb-3">
+                <label for="direccion" class="form-label text-light fw-bold"><strong>Dirección</strong></label>
+                <input type="text" class="form-control fw-bold" id="direccion" required placeholder="Dirección (calle, número, ciudad)" style="background:#fff;color:#000;border:1px solid #ccc;">
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label text-light fw-bold"><strong>Teléfono</strong></label>
+                <input type="tel" class="form-control fw-bold" id="telefono" required placeholder="Ej: 3123456789" style="background:#fff;color:#000;border:1px solid #ccc;">
+              </div>
+              <div class="mb-3">
+                <label for="metodoPago" class="form-label text-light fw-bold"><strong>Método de pago</strong></label>
+                <select class="form-control fw-bold" id="metodoPago" required style="background:#fff;color:#000;border:1px solid #ccc;">
+                  <option value="">Selecciona...</option>
+                  <option value="Efectivo">Efectivo</option>
+                  <option value="Transferencia">Transferencia</option>
+                  <option value="Tarjeta">Tarjeta</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-success w-100 fw-bold">Confirmar compra</button>
+            </form>
+            <div id="checkoutSuccess" class="alert alert-success mt-3" style="display:none;">¡Compra realizada con éxito!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Luz Artesanos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><i class="fas fa-map-marker-alt fa-fw"></i> Cll 15#15-54</li>
+                        <li><i class="fa fa-phone fa-fw"></i> <a class="text-decoration-none" href="tel:3133250714">3133250714</a></li>
+                        <li><i class="fa fa-envelope fa-fw"></i> <a class="text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Bolsos</a></li>
+                        <li><a class="text-decoration-none" href="#">Tulas</a></li>
+                        <li><a class="text-decoration-none" href="#">Maletas</a></li>
+                        <li><a class="text-decoration-none" href="#">Carteras</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Informacion de la pagina</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Inicio</a></li>
+                        <li><a class="text-decoration-none" href="#">Sobre nosotros</a></li>
+                        <li><a class="text-decoration-none" href="#">Localizacion de la tienda</a></li>
+                        <li><a class="text-decoration-none" href="#">Tienda</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3"><div class="w-100 my-3 border-top border-light"></div></div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center"><a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a></li>
+                        <li class="list-inline-item border border-light rounded-circle text-center"><a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Ingresa tu Email</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Ingresa tu Email">
+                        <div class="input-group-text btn-success text-light">Suscribirse</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">Copyright &copy; 2021 Company Name | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <!-- End Script -->
+
+    <script>
+    // slider
+    $('#carousel-related-product').slick({
+        infinite: true,
+        arrows: false,
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        dots: true,
+        responsive: [{ breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } }, { breakpoint: 600, settings: { slidesToShow: 2, slidesToScroll: 3 } }, { breakpoint: 480, settings: { slidesToShow: 2, slidesToScroll: 3 } }]
+    });
+    </script>
+
+    <script>
+    (function(){
+      'use strict';
+      const CART_KEY = 'cart';
+      let cart = [];
+
+      function loadCart(){ try{ cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; }catch(e){ cart = []; } }
+      function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+      function formatMoney(n){ return '$' + Number(n).toLocaleString(); }
+
+      function updateCartModal(){
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        if(!cartItems || !cartTotal) return;
+        cartItems.innerHTML = '';
+        let total = 0;
+        cart.forEach((item, idx) => {
+          total += item.price * item.qty;
+          const li = document.createElement('li');
+          li.className = 'list-group-item d-flex justify-content-between align-items-center';
+          li.innerHTML = `
+            <div>${item.name}</div>
+            <div class="d-flex align-items-center">
+              <span class="badge bg-success rounded-pill me-2">${formatMoney(item.price)} x${item.qty}</span>
+              <button class="btn btn-danger btn-sm btn-remove-item" data-idx="${idx}" aria-label="Eliminar">&times;</button>
+            </div>
+          `;
+          cartItems.appendChild(li);
+        });
+        cartTotal.textContent = formatMoney(total);
+        document.querySelectorAll('.nav-icon .badge').forEach(b => { b.textContent = cart.reduce((s,i)=>s+i.qty,0); });
+        saveCart();
+        document.querySelectorAll('.btn-remove-item').forEach(btn=>{ btn.onclick = function(){ const idx = parseInt(this.dataset.idx); if(!isNaN(idx)){ cart.splice(idx,1); updateCartModal(); } }; });
+      }
+
+      function normalizePrice(text){ if(!text) return 0; const num = String(text).replace(/[^0-9\.\-]/g,''); return Math.round(parseFloat(num) || 0); }
+
+      function getProductDataFromButton(btn){
+        const name = btn?.getAttribute('data-name') || document.querySelector('h1.h2')?.textContent?.trim() || document.querySelector('h1')?.textContent?.trim() || 'Producto';
+        const raw = btn?.getAttribute('data-price') || btn?.dataset.price || document.querySelector('#product-price')?.textContent || '0';
+        const price = normalizePrice(raw);
+        const qty = parseInt(document.getElementById('product-quanity')?.value) || parseInt(document.getElementById('var-value')?.textContent) || 1;
+        return { name, price, qty };
+      }
+
+      function addProductToCart(name, price, qty){
+        qty = Math.max(1, parseInt(qty) || 1);
+        const found = cart.find(i=>i.name===name && i.price===price);
+        if(found) found.qty += qty; else cart.push({ name, price, qty });
+        saveCart(); updateCartModal();
+      }
+
+      document.addEventListener('DOMContentLoaded', function(){
+        loadCart(); updateCartModal();
+
+        // color swatches
+        document.getElementById('color-black')?.addEventListener('click', function(){
+          document.getElementById('product-detail').src = 'assets/img/Bolso inicio.jpg';
+          document.getElementById('product-color-text').textContent = 'Negra';
+          this.classList.add('active'); document.getElementById('color-grey')?.classList.remove('active');
+        });
+        document.getElementById('color-grey')?.addEventListener('click', function(){
+          document.getElementById('product-detail').src = 'assets/img/Bolso-marron.jpg'; // usa imagen gris/marron según existencias
+          document.getElementById('product-color-text').textContent = 'Gris';
+          this.classList.add('active'); document.getElementById('color-black')?.classList.remove('active');
+        });
+
+        // qty controls
+        const btnPlus = document.getElementById('btn-plus');
+        const btnMinus = document.getElementById('btn-minus');
+        const varValue = document.getElementById('var-value');
+        const qtyInput = document.getElementById('product-quanity');
+        function setQty(n){ n = Math.max(1, parseInt(n) || 1); if(varValue) varValue.textContent = n; if(qtyInput) qtyInput.value = n; }
+        if(btnPlus) btnPlus.addEventListener('click', ()=> setQty((parseInt(varValue?.textContent) || 1) + 1));
+        if(btnMinus) btnMinus.addEventListener('click', ()=> setQty((parseInt(varValue?.textContent) || 1) - 1));
+
+        // add to cart
+        document.getElementById('btn-add-to-cart')?.addEventListener('click', function(e){
+          e.preventDefault();
+          const p = getProductDataFromButton(this); addProductToCart(p.name, p.price, p.qty);
+          const cartEl = document.getElementById('cartModal');
+          if(cartEl && window.bootstrap && bootstrap.Modal){ const inst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(cartEl) : new bootstrap.Modal(cartEl); if(inst && typeof inst.show === 'function') inst.show(); }
+        });
+
+        // buy -> add + open checkout
+        document.getElementById('btn-buy')?.addEventListener('click', function(e){
+          e.preventDefault(); const p = getProductDataFromButton(this); addProductToCart(p.name, p.price, p.qty);
+          const cartEl = document.getElementById('cartModal');
+          if(cartEl && window.bootstrap && bootstrap.Modal){ const cartInst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(cartEl) : (bootstrap.Modal.getInstance ? bootstrap.Modal.getInstance(cartEl) : new bootstrap.Modal(cartEl)); if(cartInst && typeof cartInst.hide === 'function') cartInst.hide(); }
+          const checkoutEl = document.getElementById('checkoutModal');
+          if(checkoutEl && window.bootstrap && bootstrap.Modal){ const checkoutInst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(checkoutEl) : (bootstrap.Modal.getInstance ? bootstrap.Modal.getInstance(checkoutEl) : new bootstrap.Modal(checkoutEl)); if(checkoutInst && typeof checkoutInst.show === 'function') checkoutInst.show(); }
+        });
+
+        // show register from login
+        document.getElementById('showRegister')?.addEventListener('click', function(e){ e.preventDefault();
+          const loginEl = document.getElementById('loginModal'); const registerEl = document.getElementById('registerModal');
+          if(loginEl && registerEl && window.bootstrap && bootstrap.Modal){ const loginInst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(loginEl) : (bootstrap.Modal.getInstance ? bootstrap.Modal.getInstance(loginEl) : new bootstrap.Modal(loginEl)); if(loginInst && typeof loginInst.hide === 'function') loginInst.hide(); const regInst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(registerEl) : (bootstrap.Modal.getInstance ? bootstrap.Modal.getInstance(registerEl) : new bootstrap.Modal(registerEl)); if(regInst && typeof regInst.show === 'function') regInst.show(); }
+        });
+
+        // register
+        document.getElementById('registerForm')?.addEventListener('submit', function(e){
+          e.preventDefault();
+          const u = document.getElementById('registerUser').value.trim(); const p = document.getElementById('registerPass').value.trim();
+          if(!u || !p) return;
+          let users = JSON.parse(localStorage.getItem('users') || '{}');
+          if(users[u]){ document.getElementById('registerError').style.display = 'block'; return; }
+          users[u] = p; localStorage.setItem('users', JSON.stringify(users)); document.getElementById('registerError').style.display = 'none';
+          alert('¡Usuario registrado! Ahora inicia sesión.');
+          const regEl = document.getElementById('registerModal'); if(regEl && window.bootstrap && bootstrap.Modal) bootstrap.Modal.getOrCreateInstance(regEl).hide();
+          const loginEl = document.getElementById('loginModal'); if(loginEl && window.bootstrap && bootstrap.Modal) bootstrap.Modal.getOrCreateInstance(loginEl).show();
+        });
+
+        // login
+        document.getElementById('loginForm')?.addEventListener('submit', function(e){
+          e.preventDefault();
+          const u = document.getElementById('loginUser').value.trim(); const p = document.getElementById('loginPass').value.trim();
+          let users = JSON.parse(localStorage.getItem('users') || '{}');
+          if(users[u] && users[u] === p){ document.getElementById('loginError').style.display = 'none'; localStorage.setItem('loggedIn','true'); localStorage.setItem('loginUser', u); alert('¡Bienvenido, ' + u + '!'); const loginEl = document.getElementById('loginModal'); if(loginEl && window.bootstrap && bootstrap.Modal) bootstrap.Modal.getOrCreateInstance(loginEl).hide(); checkLogin(); } else { document.getElementById('loginError').style.display = 'block'; }
+        });
+
+        document.getElementById('userNav')?.addEventListener('dblclick', function(){ localStorage.removeItem('loggedIn'); localStorage.removeItem('loginUser'); alert('Sesión cerrada'); checkLogin(); });
+
+        // checkout from cart modal
+        document.getElementById('btnCheckout')?.addEventListener('click', function(){
+          const cartEl = document.getElementById('cartModal'); if(cartEl && window.bootstrap && bootstrap.Modal){ const cartInst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(cartEl) : (bootstrap.Modal.getInstance ? bootstrap.Modal.getInstance(cartEl) : new bootstrap.Modal(cartEl)); if(cartInst && typeof cartInst.hide === 'function') cartInst.hide(); }
+          const checkoutEl = document.getElementById('checkoutModal'); if(checkoutEl && window.bootstrap && bootstrap.Modal){ const checkoutInst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(checkoutEl) : (bootstrap.Modal.getInstance ? bootstrap.Modal.getInstance(checkoutEl) : new bootstrap.Modal(checkoutEl)); if(checkoutInst && typeof checkoutInst.show === 'function') checkoutInst.show(); }
+        });
+
+        // checkout submit -> WhatsApp
+        document.getElementById('checkoutForm')?.addEventListener('submit', function(e){
+          e.preventDefault();
+          const nombre = document.getElementById('nombre').value.trim(); const direccion = document.getElementById('direccion').value.trim(); const telefono = document.getElementById('telefono').value.trim(); const metodoPago = document.getElementById('metodoPago').value;
+          const cartData = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+          const productos = cartData.length ? cartData.map(i=>`• ${i.name} x${i.qty} ($${i.price.toLocaleString()} c/u)`).join('\n') : 'Sin productos seleccionados';
+          const mensaje = `¡Hola! Quiero confirmar mi compra:\n\nNombre: ${nombre}\nDirección: ${direccion}\nTeléfono: ${telefono}\nMétodo de pago: ${metodoPago}\n\nProductos:\n${productos}`;
+          const numeroWhats = '3125889261';
+          window.open(`https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensaje)}`, '_blank');
+          const checkoutEl = document.getElementById('checkoutModal'); if(checkoutEl && window.bootstrap && bootstrap.Modal) bootstrap.Modal.getOrCreateInstance(checkoutEl).hide();
+          this.reset();
+        });
+
+        checkLogin();
+      });
+
+      function checkLogin(){
+        const loggedIn = localStorage.getItem('loggedIn'); const user = localStorage.getItem('loginUser');
+        const userNameSpan = document.getElementById('userName'); const userIcon = document.querySelector('.fa-user');
+        if(loggedIn === 'true' && user){ if(userNameSpan) userNameSpan.textContent = ' ' + user; if(userIcon){ userIcon.classList.remove('text-dark'); userIcon.classList.add('text-success'); userIcon.title = 'Sesión iniciada como ' + user; } } else { if(userNameSpan) userNameSpan.textContent = ''; if(userIcon){ userIcon.classList.remove('text-success'); userIcon.classList.add('text-dark'); userIcon.title = ''; } }
+      }
+    })();
+    </script>
+
+    <script>
+    (function(){
+      function parsePrice(text){
+        if(!text) return 0;
+        return Math.round(parseFloat(String(text).replace(/[^0-9\.]/g,'')) || 0);
+      }
+
+      function readCart(){ try{ return JSON.parse(localStorage.getItem('cart')||'[]'); }catch(e){ return []; } }
+      function writeCart(c){ localStorage.setItem('cart', JSON.stringify(c)); }
+
+      function refreshBadgeAndModal(){
+        // actualiza badge
+        const totalQty = readCart().reduce((s,i)=>s+i.qty,0);
+        document.querySelectorAll('.nav-icon .badge').forEach(b=> b.textContent = totalQty);
+        // llama a updateCartModal si existe para rellenar modal completo
+        if(typeof updateCartModal === 'function') try{ updateCartModal(); }catch(e){ /* ignore */ }
+      }
+
+      function addToCart(name, price, qty){
+        const cart = readCart();
+        const found = cart.find(i=>i.name===name && i.price===price);
+        if(found) found.qty += qty; else cart.push({ name, price, qty });
+        writeCart(cart);
+        refreshBadgeAndModal();
+      }
+
+      document.getElementById('btn-add-to-cart')?.addEventListener('click', function(e){
+        e.preventDefault();
+        const btn = this;
+        const name = btn.getAttribute('data-name') || document.querySelector('h1.h2')?.textContent?.trim() || document.querySelector('h1')?.textContent?.trim() || 'Producto';
+        const rawPrice = btn.getAttribute('data-price') || document.querySelector('#product-price')?.textContent || '0';
+        const price = parsePrice(rawPrice);
+        const qty = parseInt(document.getElementById('product-quanity')?.value || document.getElementById('var-value')?.textContent || '1') || 1;
+        addToCart(name, price, qty);
+
+        // abrir modal del carrito
+        const cartEl = document.getElementById('cartModal');
+        if(cartEl && window.bootstrap && bootstrap.Modal){
+          const inst = bootstrap.Modal.getOrCreateInstance ? bootstrap.Modal.getOrCreateInstance(cartEl) : new bootstrap.Modal(cartEl);
+          if(inst && typeof inst.show === 'function') inst.show();
+        }
+      });
+
+      // inicializa badge al cargar la página
+      document.addEventListener('DOMContentLoaded', refreshBadgeAndModal);
+    })();
+    </script>
+
+    <script>
+(function(){
+  'use strict';
+  // Elimina backdrops y clase modal-open si queda algo tras cerrar un modal
+  function cleanupModalArtifacts(){
+    document.body.classList.remove('modal-open');
+    document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+  }
+
+  // Escucha evento de cierre de cualquier modal (Bootstrap 5)
+  document.querySelectorAll('.modal').forEach(modalEl=>{
+    modalEl.addEventListener('hidden.bs.modal', function(){
+      // pequeño delay por si hay transiciones en curso
+      setTimeout(cleanupModalArtifacts, 10);
+    });
+  });
+
+  // Si algún script hace hide manualmente sin disparar eventos, interceptamos clicks en botones de cierre
+  document.addEventListener('click', function(e){
+    if(e.target && (e.target.matches('[data-bs-dismiss="modal"]') || e.target.closest('[data-bs-dismiss="modal"]'))){
+      setTimeout(cleanupModalArtifacts, 10);
+    }
+  });
+
+  // También limpia al cargar por si hay restos de una sesión previa
+  window.addEventListener('load', cleanupModalArtifacts);
+})();
+</script>
+
+</body>
+</html>

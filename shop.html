@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zay Shop - Product Listing Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <style>
+        body {
+            background-image: url('assets/img/fondo pagina.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        .row {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+        #checkoutModal .form-control {
+            background-color: #222;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        #checkoutModal .form-control:focus {
+            background-color: #222;
+            color: #fff;
+            border: 1.5px solid #6F4E37;
+        }
+        #checkoutModal label,
+        #checkoutModal .modal-title,
+        #checkoutModal option {
+            color: #fff !important;
+            font-weight: bold !important;
+        }
+        /* Fondo negro y texto blanco para el select y sus opciones */
+        #metodoPago {
+            background-color: #222 !important;
+            color: #fff !important;
+            border: 1px solid #444;
+        }
+        #metodoPago option {
+            background-color: #222 !important;
+            color: #fff !important;
+        }
+        .menu-hover {
+            transition: all 0.3s;
+            border-radius: 12px;
+            font-weight: bold;
+            padding: 8px 18px !important;
+            margin: 0 4px;
+            color: #6F4E37 !important;
+            background: transparent;
+            box-shadow: none;
+            display: inline-block;
+        }
+        .menu-hover:hover, .menu-hover:focus {
+            background: #6F4E37 !important;
+            color: #fff !important;
+            font-weight: bold !important;
+            box-shadow: 0 4px 16px 0 rgba(111, 78, 55, 0.15), 0 1.5px 4px 0 rgba(111, 78, 55, 0.10);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        .shop-top-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .shop-top-menu .list-inline-item {
+            margin-right: 30px !important;
+        }
+        .shop-top-menu .list-inline-item:last-child {
+            margin-right: 0 !important;
+        }
+        #loginModal .modal-content {
+            background: #fff !important;
+            color: #111 !important;
+            border-radius: 12px;
+        }
+        #loginModal label,
+        #loginModal input,
+        #loginModal button,
+        #loginModal .modal-title {
+            color: #111 !important;
+            font-weight: bold !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:3125886291">3125886291</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://www.facebook.com/profile.php?id=61582553013829&sfnsn=wa" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/arteluz_2307?igsh=MjA0emNpcm8wMnZs/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                Luz Artesanos
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+        <a class="nav-link menu-hover" href="index.html">Inicio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link menu-hover" href="about.html">Sobre nosotros</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link menu-hover" href="shop.html">Tienda</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link menu-hover" href="contact.html">Contacto</a>
+    </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <!-- Carrito de compras (ícono en el navbar) -->
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                    </a>
+                     <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" id="userNav">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        <span id="userName" class="text-success fw-bold"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal del carrito de compras -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Carrito de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group mb-3" id="cart-items"></ul>
+            <div class="d-flex justify-content-between">
+              <strong>Total:</strong>
+              <strong id="cart-total">$0</strong>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="btnCheckout">Finalizar compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Login -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginUser" class="form-label">Usuario</label>
+            <input type="text" class="form-control" id="loginUser" required>
+          </div>
+          <div class="mb-3">
+            <label for="loginPass" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="loginPass" required>
+          </div>
+          <div id="loginError" class="text-danger mb-2" style="display:none;">Usuario o contraseña incorrectos</div>
+          <button type="submit" class="btn btn-success w-100">Entrar</button>
+        </form>
+        <div class="text-center mt-2">
+          <a href="#" id="showRegister">¿No tienes cuenta? Regístrate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Registrarse</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="mb-3">
+            <label for="registerUser" class="form-label">Usuario</label>
+            <input type="text" class="form-control" id="registerUser" required>
+          </div>
+          <div class="mb-3">
+            <label for="registerPass" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="registerPass" required>
+          </div>
+          <div id="registerError" class="text-danger mb-2" style="display:none;">El usuario ya existe</div>
+          <button type="submit" class="btn btn-success w-100">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Start Content -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Sidebar de Categorías a la izquierda -->
+            <div class="col-lg-3">
+                <h1 class="h2 pb-4">Categorias</h1>
+                <ul class="list-unstyled templatemo-accordion">
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Productos
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Mochilas</a></li>
+                            <li><a class="text-decoration-none" href="#">Tulas</a></li>
+                            <li><a class="text-decoration-none" href="#">Carteras</a></li>
+                            <li><a class="text-decoration-none" href="#">Riñoneras</a></li>
+                            <li><a class="text-decoration-none" href="#">Billeteras</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Productos en el centro -->
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="lo mas nuevo.html"><b>Lo mas nuevo</b></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="promociones web.html"><b>promociones</b></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none fw-bold" href="lo mas vendido.html"><b>Lo mas vendido</b></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Producto: Maleta -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/Bolso inicio.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
+                                        <!-- Botón para agregar al carrito -->
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Maleta" data-price="150.000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none fw-bold">Maleta</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$150.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Bolso de mano -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/bolso para abajo.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="bolso de mano.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="bolso de mano.html"><i class="far fa-eye"></i></a></li>
+                                        <!-- Botón para agregar al carrito -->
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Bolso de mano" data-price="100000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none fw-bold">Bolso de mano</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$50.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Tulas -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/tula.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="Tula.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Tula.html"><i class="far fa-eye"></i></a></li>
+                                        <!-- Botón para agregar al carrito -->
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Tulas" data-price="50000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Tula.html" class="h3 text-decoration-none fw-bold">Tulas</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$60.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: mochilita -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/mochila para abajo.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="Mochilita.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Mochilita.html"><i class="far fa-eye"></i></a></li>
+                                        <!-- Botón para agregar al carrito -->
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="mochilita" data-price="55000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Mochilita.html" class="h3 text-decoration-none fw-bold">mochilita</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$70.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Bolsa -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/bolso cafe shop 2.png">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="Bolsa de mano cafe.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Bolsa de mano cafe.html"><i class="far fa-eye"></i></a></li>
+                                        <!-- Botón para agregar al carrito -->
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Bolsa" data-price="25000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Bolsa de mano cafe.html" class="h3 text-decoration-none fw-bold">Bolsa</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$40.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Bolso -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/bolsoooo para vendeer.png">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="mochila grande.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Bolso de viaje.html"><i class="far fa-eye"></i></a></li>
+                                        <!-- Botón para agregar al carrito -->
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Bolso" data-price="150000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Bolso de viaje.html" class="h3 text-decoration-none fw-bold">Bolso</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$110.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: mochila -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/bolso nuevo pagina.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="Maleta Gris.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Maleta Gris.html"><i class="far fa-eye"></i></a></li>
+                                        <!-- Botón para agregar al carrito -->
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="mochila" data-price="120000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Maleta Gris.html" class="h3 text-decoration-none fw-bold">Bolso</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$30.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Mochilita -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/mochilita para vender.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="Mochilita negrita.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Mochilita negrita.html"><i class="far fa-eye"></i></a></li>
+                                        <!-- Botón para agregar al carrito -->
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Mochilita" data-price="62000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Mochilita negrita.html" class="h3 text-decoration-none fw-bold">Mochilita</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$70.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Bolso rojito -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/bolso para abajo 2.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="Bolso rojito.html"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="Bolso rojito.html"><i class="far fa-eye"></i></a></li>
+                                        <li>
+                                            <a class="btn btn-success text-white mt-2 add-to-cart" href="#" data-name="Bolso" data-price="78000">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="Bolso rojito.html" class="h3 text-decoration-none fw-bold">Bolso</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">$60.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div div="row">
+                    <ul class="pagination pagination-lg justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="shop2.html">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Content -->
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Luz Artesanos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Calle 15#15-54
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:3133250714">3133250714</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:luzdvega2606@gmail.com">luzdvega2606@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Bolsos</a></li>
+                        <li><a class="text-decoration-none" href="#">Tulas</a></li>
+                        <li><a class="text-decoration-none" href="#">Maletas</a></li>
+                        <li><a class="text-decoration-none" href="#">Carteras</a></li>
+                        <li><a class="text-decoration-none" href="#">Riñoneras</a></li>
+                        <li><a class="text-decoration-none" href="#">Billeteras</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Informacion de la pagina</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Inicio</a></li>
+                        <li><a class="text-decoration-none" href="#">Sobre nosotros</a></li>
+                        <li><a class="text-decoration-none" href="#">localizacion de la tienda</a></li>
+                        <li><a class="text-decoration-none" href="#">Tienda</a></li>
+                        <li><a class="text-decoration-none" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Email address</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2021 Company Name 
+                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <!-- Script del carrito funcional -->
+<script>
+let cart = [];
+
+// Cargar carrito desde localStorage al iniciar
+function loadCart() {
+    const stored = localStorage.getItem('cart');
+    cart = stored ? JSON.parse(stored) : [];
+}
+
+// Guardar carrito en localStorage
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function updateCartModal() {
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    cartItems.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, idx) => {
+        total += item.price * item.qty;
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        li.innerHTML = `
+            ${item.name} 
+            <span class="badge bg-success rounded-pill">$${item.price.toLocaleString()} x${item.qty}</span>
+            <button class="btn btn-danger btn-sm ms-2 btn-remove-item" data-idx="${idx}">&times;</button>
+        `;
+        cartItems.appendChild(li);
+    });
+    cartTotal.textContent = `$${total.toLocaleString()}`;
+    // Actualiza el número del ícono del carrito
+    document.querySelectorAll('.nav-icon .badge').forEach(badge => {
+        badge.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+    });
+    saveCart();
+
+    // Evento para borrar producto
+    document.querySelectorAll('.btn-remove-item').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const idx = parseInt(this.getAttribute('data-idx'));
+            cart.splice(idx, 1);
+            updateCartModal();
+        });
+    });
+}
+
+// Espera a que el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    loadCart();
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const name = this.getAttribute('data-name');
+            const price = parseInt(this.getAttribute('data-price'));
+            const found = cart.find(item => item.name === name && item.price === price);
+            if (found) {
+                found.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartModal();
+        });
+    });
+    updateCartModal();
+});
+</script>
+
+<!-- Script de Login y mostrar usuario -->
+<script>
+// Mostrar modal de registro
+document.addEventListener('DOMContentLoaded', function() {
+    var showRegister = document.getElementById('showRegister');
+    if(showRegister){
+        showRegister.onclick = function(e) {
+            e.preventDefault();
+            var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+            loginModal.hide();
+            var registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+            registerModal.show();
+        };
+    }
+});
+
+// Guardar usuarios en localStorage
+function saveUser(user, pass) {
+    let users = JSON.parse(localStorage.getItem('users') || '{}');
+    if (users[user]) return false;
+    users[user] = pass;
+    localStorage.setItem('users', JSON.stringify(users));
+    return true;
+}
+
+// Validar usuario y contraseña
+function validateUser(user, pass) {
+    let users = JSON.parse(localStorage.getItem('users') || '{}');
+    return users[user] && users[user] === pass;
+}
+
+// Registro
+document.addEventListener('DOMContentLoaded', function() {
+    var registerForm = document.getElementById('registerForm');
+    if(registerForm){
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('registerUser').value;
+            const pass = document.getElementById('registerPass').value;
+            if (saveUser(user, pass)) {
+                document.getElementById('registerError').style.display = 'none';
+                alert('¡Usuario registrado! Ahora puedes iniciar sesión.');
+                var registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                registerModal.hide();
+                var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                loginModal.show();
+            } else {
+                document.getElementById('registerError').style.display = 'block';
+            }
+        });
+    }
+});
+
+// Login
+document.addEventListener('DOMContentLoaded', function() {
+    var loginForm = document.getElementById('loginForm');
+    if(loginForm){
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('loginUser').value;
+            const pass = document.getElementById('loginPass').value;
+            if(validateUser(user, pass)) {
+                document.getElementById('loginError').style.display = 'none';
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('loginUser', user);
+                alert('¡Bienvenido, ' + user + '!');
+                var modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                modal.hide();
+                checkLogin();
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        });
+    }
+});
+
+// Mostrar nombre de usuario y logout
+function checkLogin() {
+    const loggedIn = localStorage.getItem('loggedIn');
+    const user = localStorage.getItem('loginUser');
+    const userNameSpan = document.getElementById('userName');
+    const userIcon = document.querySelector('.fa-user');
+    if (loggedIn === 'true' && user) {
+        if(userNameSpan) userNameSpan.textContent = ' ' + user;
+        if(userIcon) {
+            userIcon.classList.remove('text-dark');
+            userIcon.classList.add('text-success');
+            userIcon.title = 'Sesión iniciada como ' + user;
+        }
+    } else {
+        if(userNameSpan) userNameSpan.textContent = '';
+        if(userIcon) {
+            userIcon.classList.remove('text-success');
+            userIcon.classList.add('text-dark');
+            userIcon.title = '';
+        }
+    }
+}
+window.addEventListener('DOMContentLoaded', checkLogin);
+document.addEventListener('DOMContentLoaded', function() {
+    var userNav = document.getElementById('userNav');
+    if(userNav){
+        userNav.addEventListener('dblclick', function() {
+            localStorage.removeItem('loggedIn');
+            localStorage.removeItem('loginUser');
+            alert('Sesión cerrada');
+            checkLogin();
+        });
+    }
+});
+</script>
+
+<!-- Modal de formulario de checkout -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark" style="border-radius: 10px;">
+      <div class="modal-header">
+        <h5 class="modal-title text-light fw-bold" id="checkoutModalLabel"><strong>Formulario de Compra</strong></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="checkoutForm">
+          <div class="mb-3">
+            <label for="nombre" class="form-label text-light fw-bold"><strong>Nombre completo</strong></label>
+            <!-- casilla visible debajo de la etiqueta -->
+            <input type="text" class="form-control fw-bold" id="nombre" required placeholder="Ingresa tu nombre completo" style="background:#fff;color:#000;border:1px solid #ccc;">
+          </div>
+          <div class="mb-3">
+            <label for="direccion" class="form-label text-light fw-bold"><strong>Dirección</strong></label>
+            <!-- casilla visible debajo de la etiqueta -->
+            <input type="text" class="form-control fw-bold" id="direccion" required placeholder="Dirección (calle, número, ciudad)" style="background:#fff;color:#000;border:1px solid #ccc;">
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label text-light fw-bold"><strong>Teléfono</strong></label>
+            <!-- casilla visible debajo de la etiqueta -->
+            <input type="tel" class="form-control fw-bold" id="telefono" required placeholder="Ej: 3123456789" style="background:#fff;color:#000;border:1px solid #ccc;">
+          </div>
+
+          <div class="mb-3">
+            <label for="metodoPago" class="form-label text-light fw-bold"><strong>Método de pago</strong></label>
+            <select class="form-control fw-bold" id="metodoPago" required style="background:#fff;color:#000;border:1px solid #ccc;">
+              <option value="">Selecciona...</option>
+              <option value="Efectivo">Efectivo</option>
+              <option value="Transferencia">Transferencia</option>
+              <option value="Tarjeta">Tarjeta</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success w-100 fw-bold">Confirmar compra</button>
+        </form>
+        <div id="checkoutSuccess" class="alert alert-success mt-3" style="display:none;">
+          ¡Compra realizada con éxito!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script para manejar el formulario de checkout y WhatsApp -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var btnCheckout = document.getElementById('btnCheckout');
+    var checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+    var cartModal = document.getElementById('cartModal');
+    if(btnCheckout){
+        btnCheckout.addEventListener('click', function() {
+            var cartModalInstance = bootstrap.Modal.getInstance(cartModal);
+            cartModalInstance.hide();
+            setTimeout(() => checkoutModal.show(), 500);
+        });
+    }
+    var checkoutForm = document.getElementById('checkoutForm');
+    if(checkoutForm){
+        checkoutForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var nombre = document.getElementById('nombre').value;
+            var direccion = document.getElementById('direccion').value;
+            var telefono = document.getElementById('telefono').value;
+            var metodoPago = document.getElementById('metodoPago').value;
+
+            // Obtener productos del carrito
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            let productos = cart.length
+                ? cart.map(item => `• ${item.name} x${item.qty} ($${item.price.toLocaleString()} c/u)`).join('\n')
+                : 'Sin productos seleccionados';
+
+            // Construye el mensaje para WhatsApp con saltos de línea normales
+            var mensaje = 
+                '¡Hola! Quiero confirmar mi compra:\n\n' +
+                'Nombre: ' + nombre + '\n' +
+                'Dirección: ' + direccion + '\n' +
+                'Teléfono: ' + telefono + '\n' +
+                'Método de pago: ' + metodoPago + '\n\n' +
+                'Productos:\n' + productos;
+
+            var numeroWhatsApp = "3125889261"; // Cambia aquí el número si lo necesitas
+            var url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+
+            checkoutModal.hide();
+            document.getElementById('checkoutSuccess').style.display = 'none';
+            checkoutForm.reset();
+        });
+    }
+});
+</script>
+
+<!-- Robot flotante con chat -->
+<div id="robotBot" style="position:fixed;bottom:30px;right:30px;z-index:9999;cursor:pointer;">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Robot" style="width:70px;height:70px;">
+</div>
+<div id="robotChat" style="
+    display:none;
+    position:fixed;
+    bottom:120px;
+    right:30px;
+    width:320px;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 2px 16px rgba(0,0,0,0.18);
+    font-family:Arial,sans-serif;
+    overflow:hidden;
+    z-index:10000;
+">
+    <div style="background:#6F4E37;color:#fff;padding:12px 18px;font-weight:bold;">
+        Chat con Luz Artesanos
+        <span id="closeChat" style="float:right;cursor:pointer;font-weight:bold;">×</span>
+    </div>
+    <div id="chatMessages" style="height:180px;padding:12px;overflow-y:auto;font-size:1rem;background:#f7f7f7;"></div>
+    <form id="chatForm" style="display:flex;border-top:1px solid #eee;">
+        <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." style="flex:1;padding:8px;border:none;font-size:1rem;">
+        <button type="submit" style="background:#6F4E37;color:#fff;border:none;padding:0 16px;font-weight:bold;cursor:pointer;">Enviar</button>
+    </form>
+</div>
+<script>
+// Mostrar/ocultar chat
+document.getElementById('robotBot').onclick = function() {
+    var chat = document.getElementById('robotChat');
+    chat.style.display = chat.style.display === 'none' ? 'block' : 'none';
+};
+document.getElementById('closeChat').onclick = function() {
+    document.getElementById('robotChat').style.display = 'none';
+};
+
+// Chat simple
+document.getElementById('chatForm').onsubmit = function(e) {
+    e.preventDefault();
+    var input = document.getElementById('chatInput');
+    var msg = input.value.trim();
+    if(msg) {
+        addMessage('Tú', msg, true);
+        setTimeout(function(){
+            addMessage('Robot', getBotReply(msg), false);
+        }, 700);
+        input.value = '';
+    }
+};
+function addMessage(sender, text, user){
+    var chat = document.getElementById('chatMessages');
+    var div = document.createElement('div');
+    div.style.marginBottom = '8px';
+    div.innerHTML = `<b style="color:${user?'#6F4E37':'#333'}">${sender}:</b> <span>${text}</span>`;
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+}
+function getBotReply(msg){
+    msg = msg.toLowerCase();
+
+    // Precios específicos
+    if(msg.includes('maleta')) return 'La maleta cuesta $120.000 COP.';
+    if(msg.includes('mochila')) return 'La mochila cuesta $95.000 COP.';
+    if(msg.includes('bolso')) return 'El bolso cuesta $80.000 COP.';
+    if(msg.includes('tula')) return 'La tula cuesta $60.000 COP.';
+    if(msg.includes('cartera')) return 'La cartera cuesta $45.000 COP.';
+    if(msg.includes('riñonera')) return 'La riñonera cuesta $35.000 COP.';
+    if(msg.includes('billetera')) return 'La billetera cuesta $25.000 COP.';
+
+    // Preguntas generales de precios
+    if(
+        msg.includes('precio') || msg.includes('precios') ||
+        msg.includes('cuánto vale') || msg.includes('cuanto vale') ||
+        msg.includes('cuánto cuesta') || msg.includes('cuanto cuesta')
+    )
+        return 'Nuestros precios varían según el producto. Puedes preguntarme por el precio de mochilas, bolsos, tulas, carteras, riñoneras o billeteras, o ver todos los precios en la sección "Tienda".';
+
+    if(msg.includes('producto') || msg.includes('productos')) 
+        return 'Ofrecemos mochilas, bolsos, tulas, carteras, riñoneras y billeteras. ¿Te interesa alguno en especial?';
+    if(msg.includes('ubicación') || msg.includes('ubicados') || msg.includes('dónde están') || msg.includes('direccion') || msg.includes('localizacion')) 
+        return 'Estamos ubicados en Calle 15#15-54, Sogamoso, Boyacá, Colombia. ¡Te esperamos!';
+    if(msg.includes('contacto')) 
+        return 'Puedes contactarnos al WhatsApp 3229009885 o por correo luzdvega2606@gmail.com.';
+    if(msg.includes('gracias')) 
+        return '¡Gracias a ti por escribirnos!';
+    // Respuesta para preguntas técnicas o específicas
+    if(
+        msg.includes('técnico') || msg.includes('tecnico') ||
+        msg.includes('específico') || msg.includes('especifico') ||
+        msg.includes('soporte') || msg.includes('ayuda') ||
+        msg.includes('problema') || msg.includes('error') ||
+        msg.includes('consulta') || msg.includes('duda')
+    )
+        return 'Para preguntas técnicas o más específicas, puedes comunicarte directamente al WhatsApp de la propietaria: 3133250714.';
+    // Respuesta para número de la propietaria
+    if(
+        msg.includes('número de la propietaria') || msg.includes('numero de la propietaria') ||
+        msg.includes('celular de la propietaria') || msg.includes('telefono de la propietaria') ||
+        msg.includes('whatsapp de la propietaria') || msg.includes('propietaria')
+    )
+        return 'El número de WhatsApp de la propietaria es 3133250714.';
+    if(msg.includes('hola')) return '¡Hola! ¿En qué puedo ayudarte hoy?';
+    return 'No entendí tu mensaje, pero puedes preguntar sobre productos, precios, ubicación, contacto o temas técnicos.';
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const modalForm = document.querySelector('#templatemo_search form');
+  const modalInput = document.getElementById('inputModalSearch');
+  const mobileInput = document.getElementById('inputMobileSearch');
+  const productCards = Array.from(document.querySelectorAll('.product-wap'));
+
+  function searchProducts(query){
+    const q = (query||'').trim().toLowerCase();
+    let matches = 0;
+    productCards.forEach(card => {
+      const titleEl = card.querySelector('.card-body a.h3') || card.querySelector('.card-body a');
+      const title = titleEl ? titleEl.textContent.trim().toLowerCase() : '';
+      const col = card.closest('.col-md-4');
+      if(!col) return;
+      if(!q || title.includes(q)){
+        col.style.display = '';
+        matches++;
+      } else {
+        col.style.display = 'none';
+      }
+    });
+
+    // Mostrar mensaje si no hay resultados
+    let notice = document.getElementById('search-no-results');
+    const parentInsert = document.querySelector('.col-lg-9');
+    if(!notice && parentInsert){
+      notice = document.createElement('div');
+      notice.id = 'search-no-results';
+      notice.className = 'alert alert-warning mt-3';
+      parentInsert.insertBefore(notice, parentInsert.querySelector('.row'));
+    }
+    if(notice){
+      if(q && matches === 0){
+        notice.textContent = 'No se encontraron productos para "' + query + '".';
+        notice.style.display = 'block';
+      } else {
+        notice.style.display = 'none';
+      }
+    }
+  }
+
+  // Buscar desde modal (botón submit)
+  if(modalForm && modalInput){
+    modalForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const q = modalInput.value || '';
+      searchProducts(q);
+      // cerrar modal de búsqueda
+      const modalEl = document.getElementById('templatemo_search');
+      const modalInstance = bootstrap.Modal && bootstrap.Modal.getOrCreateInstance
+        ? bootstrap.Modal.getOrCreateInstance(modalEl)
+        : (bootstrap.Modal && (bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl)));
+      if(modalInstance && typeof modalInstance.hide === 'function') modalInstance.hide();
+    });
+  }
+
+  // Buscar desde input móvil (Enter) y limpiar al borrar
+  if(mobileInput){
+    mobileInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        searchProducts(this.value || '');
+      }
+    });
+    mobileInput.addEventListener('input', function(){
+      if(this.value.trim() === '') searchProducts('');
+    });
+  }
+});
+</script>
+</body>
+
+</html>
